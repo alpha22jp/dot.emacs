@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: scast
+# key: scast
+# binding: direct-keybinding
+# --
+static_cast<$1>($2)
