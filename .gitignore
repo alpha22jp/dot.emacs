@@ -1,0 +1,14 @@
+.mc-lists.el
+.recentf
+bookmarks
+network-security.data
+recentf*
+auto-save-list/
+cache/
+elpa/
+irony/
+lisp-local/*
+request/
+template/
+url/
+var/
