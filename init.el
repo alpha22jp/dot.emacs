@@ -288,6 +288,8 @@
 ;;
 (use-package simplenote2
   :config
+  ;; Windowsではcurlを使うとPOSTが失敗するため、url-retrieveを使う
+  (when (eq system-type 'windows-nt) (setq request-backend 'url-retrieve))
   (setq simplenote2-email user-mail-address)
   (setq simplenote2-markdown-notes-mode 'markdown-mode)
   (add-hook 'simplenote2-create-note-hook 'simplenote2-set-markdown)
