@@ -10,6 +10,7 @@ irony/
 lisp-local/*
 !.gitkeep
 request/
+server/
 template/
 url/
 var/
