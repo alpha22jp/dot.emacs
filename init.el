@@ -284,6 +284,13 @@
               (local-set-key (kbd "M-l") 'git-gutter:popup-hunk)
               (local-set-key (kbd "M-r") 'git-gutter:revert-hunk))))
 
+;; gist
+;;
+(use-package gist
+  :defer t
+  :config
+  (setq gist-ask-for-description t))
+
 ;; simplenote2
 ;;
 (use-package simplenote2
