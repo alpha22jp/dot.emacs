@@ -224,6 +224,7 @@
 ;; rtags
 ;;
 (use-package rtags
+  :disabled (eq system-type 'windows-nt)
   :config
   (when (require 'rtags-helm nil 'noerror)
     (setq rtags-use-helm t))
