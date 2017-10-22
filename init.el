@@ -562,7 +562,10 @@
     :bind ("<henkan>" . toggle-input-method)
     :config
     (setq default-input-method "japanese-mozc")
-    (bind-key "<henkan>" 'toggle-input-method mozc-mode-map)))
+    (bind-key "<henkan>" 'toggle-input-method mozc-mode-map))
+  (use-package mozc-popup
+    :config
+    (setq mozc-candidate-style 'popup)))
 
 
 ;; global key bindings
