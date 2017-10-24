@@ -548,6 +548,10 @@
 (add-hook 'markdown-mode-hook
           (lambda () (show-paren-mode 0)))
 
+;; plantuml mode
+;;
+(add-to-list 'auto-mode-alist '("\\.uml" . plantuml-mode))
+
 ;; coding system settings
 ;;
 (set-language-environment "Japanese")
