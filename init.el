@@ -120,7 +120,6 @@
 ;; exec-path-from-shell
 ;;
 (use-package exec-path-from-shell
-  :disabled (eq system-type 'windows-nt)
   :config (exec-path-from-shell-initialize))
 
 ;; recentf
