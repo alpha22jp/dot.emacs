@@ -361,7 +361,10 @@
 ;;
 (use-package helm-ag
   :defer t
-  :init (bind-key "C-g" 'helm-ag ctl-x-map))
+  :init (bind-key "C-g" 'helm-ag ctl-x-map)
+  :config
+  (setq helm-ag-insert-at-point 'symbol)
+  (setq helm-ag-base-command "pt --nocolor --nogroup --follow"))
 
 ;; helm-swoop
 ;;
