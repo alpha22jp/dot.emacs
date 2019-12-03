@@ -555,7 +555,12 @@
 
 ;; plantuml mode
 ;;
+(use-package plantuml-mode
+  :config
+  (setq plantuml-default-exec-mode 'jar))
 (add-to-list 'auto-mode-alist '("\\.uml" . plantuml-mode))
+(add-hook 'plantuml-mode-hook
+          (lambda () (plantuml-set-output-type "png")))
 
 ;; coding system settings
 ;;
