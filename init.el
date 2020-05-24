@@ -34,7 +34,7 @@
 (defvar my-default-font-size
   (cond ((eq system-type 'darwin) '16)
         ((eq system-type 'windows-nt) '10)
-        (t '11)))
+        (t '12)))
 (defun my-font-setting ()
   "My customized font setting function."
   (set-face-attribute 'default nil :font
