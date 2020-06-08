@@ -84,6 +84,7 @@
 (setq make-backup-files nil) ;; バックアップファイルを作成しない
 (setq inhibit-startup-screen t) ;; スタートアップ画面を表示しない
 (setq read-file-name-completion-ignore-case t) ;; ファイル名補完でignore case
+(setq dabbrev-case-fold-search nil) ;; dabbrevの補完時に大文字・小文字を区別する
 (setq find-file-visit-truename t) ;; シンボリックリンクを実体のパスで開く
 (setq-default tab-width 4 indent-tabs-mode nil) ;; インデント幅は4で空白を使用
 (setq ad-redefinition-action 'accept) ;; defadviceによる二重定義の警告を無視
