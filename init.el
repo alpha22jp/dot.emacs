@@ -330,14 +330,6 @@
   (setq helm-buffer-max-length 35)
   (setq helm-autoresize-min-height 20)
   (helm-autoresize-mode 1)
-  ;; バッファの並び順を変更しない
-  (defadvice helm-buffers-sort-transformer (around ignore activate)
-    (setq ad-return-value (ad-get-arg 0)))
-  ;; ファイルの選択枝に ".", ".." を含めない
-  (advice-add 'helm-ff-filter-candidate-one-by-one
-              :around (lambda (fcn file)
-                        (unless (string-match "\\(?:/\\|\\`\\)\\.\\{1,2\\}\\'" file)
-                          (funcall fcn file))))
   (bind-key "C-o" 'helm-occur-from-isearch isearch-mode-map)
   (bind-keys ("C-;" . helm-mini)
              ("C-z" . helm-resume)
