@@ -27,24 +27,21 @@
 
 ;; font settings
 ;;
-(defvar my-default-font-family
-  (cond ((eq system-type 'darwin) "Ricty Diminished")
-        ((eq system-type 'windows-nt) "MeiryoKe_Console")
-        (t  "Migu 2M")))
-(defvar my-default-font-size
-  (cond ((eq system-type 'darwin) '16)
-        ((eq system-type 'windows-nt) '10)
-        (t '12)))
-(defun my-font-setting ()
+(unless (require 'my-font-setting nil 'noerror)
+  (defvar my-default-font-family
+    (cond ((eq system-type 'darwin) "Ricty Diminished")
+          ((eq system-type 'windows-nt) "MeiryoKe_Console")
+          (t  "Migu 2M")))
+  (defvar my-default-font-size
+    (cond ((eq system-type 'darwin) '16)
+          ((eq system-type 'windows-nt) '10)
+          (t '12))))
+(defun my-set-font-face ()
   "My customized font setting function."
   (set-face-attribute 'default nil :font
                       (concat my-default-font-family "-"
-                              (number-to-string my-default-font-size)))
-  (unless (eq system-type 'windows-nt)
-    (set-fontset-font (frame-parameter nil 'font)
-                      'japanese-jisx0208
-                      (font-spec :family "Ricty Diminished" :size 16))))
-(unless (string= (frame-parameter nil 'font) "tty") (my-font-setting))
+                              (number-to-string my-default-font-size))))
+(unless (string= (frame-parameter nil 'font) "tty") (my-set-font-face))
 
 ;; keyboard-translate settings
 ;;
@@ -66,7 +63,7 @@
 (add-hook 'after-make-frame-functions
           (lambda (f)
             (with-selected-frame f
-              (my-font-setting)
+              (my-set-font-face)
               (my-keyboard-translate))))
 
 ;; custom variable settings
