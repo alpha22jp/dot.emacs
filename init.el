@@ -385,8 +385,7 @@
   (add-hook 'helm-gtags-mode-hook
             (lambda ()
               (local-set-key (kbd "M-.") 'helm-gtags-dwim)
-              (local-set-key (kbd "M-@") 'helm-gtags-find-rtag)
-              (local-set-key (kbd "M-[") 'helm-gtags-find-symbol)
+              (local-set-key (kbd "M-[") 'helm-gtags-find-rtag)
               (local-set-key (kbd "M-,") 'helm-gtags-pop-stack))))
 
 ;; helm-cscope
