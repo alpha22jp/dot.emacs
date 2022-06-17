@@ -20,7 +20,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (diminish nhexl-mode gnu-elpa-keyring-update plantuml-mode mozc-popup elscreen gist wgrep-pt pt textile-mode atomic-chrome use-package swift-mode solarized-theme smartparens smart-mode-line simplenote2 rtags helm-rtags region-bindings-mode recentf-ext quickrun popup mozc mc-extras markdown-mode magit json-mode js2-mode helm-swoop helm-gtags helm-descbinds helm-cscope helm-ag google-c-style git-gutter-fringe flycheck-irony expand-region exec-path-from-shell company-irony cmake-mode haskell-mode powerline)))
+    (diminish nhexl-mode gnu-elpa-keyring-update plantuml-mode mozc-popup gist wgrep-pt pt textile-mode atomic-chrome use-package swift-mode solarized-theme smartparens smart-mode-line simplenote2 rtags helm-rtags region-bindings-mode recentf-ext quickrun popup mozc mc-extras markdown-mode magit json-mode js2-mode helm-swoop helm-gtags helm-descbinds helm-cscope helm-ag google-c-style git-gutter-fringe flycheck-irony expand-region exec-path-from-shell company-irony cmake-mode haskell-mode powerline)))
  '(pt-arguments (quote ("--smart-case" "--follow")))
  '(show-paren-mode t)
  '(sp-ignore-modes-list (quote (minibuffer-inactive-mode markdown-mode gfm-mode)))
@@ -31,5 +31,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(tab-bar-tab ((t (:background "#002b36" :foreground "dark orange"))))
  '(textile-link-face ((t (:foreground "royalblue"))))
  '(textile-ul-bullet-face ((t (:foreground "royalblue")))))

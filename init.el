@@ -245,15 +245,20 @@
   (delq 'makefile-mode fuzzy-format-check-modes)
   (global-fuzzy-format-mode))
 
-;; elscreen
+;; tab-bar mode
 ;;
-(use-package elscreen
-  :config
-  (setq elscreen-prefix-key "\C-o")
-  (elscreen-start)
-  (add-hook 'dired-mode-hook (lambda () (local-unset-key "\C-o")))
-  (add-hook 'compilation-mode-hook (lambda () (local-unset-key "\C-o")))
-  (add-hook 'svn-status-mode-hook (lambda () (local-unset-key "\C-o"))))
+(tab-bar-mode 1)
+(defvar ctl-o-map (make-keymap))
+(define-key global-map (kbd "C-o") ctl-o-map)
+(define-key ctl-o-map (kbd "c") 'tab-new)
+(define-key ctl-o-map (kbd "k") 'tab-close)
+(setq tab-bar-new-tab-choice (lambda () (switch-to-buffer "*scratch*")))
+(setq tab-bar-tab-hints t)
+(setq tab-bar-new-button-show nil)
+(setq tab-bar-close-button-show nil)
+(setq tab-bar-tab-name-truncated-max 20)
+(setq tab-bar-tab-name-function 'tab-bar-tab-name-truncated)
+(setq tab-bar-new-tab-to 'rightmost)
 
 ;; psvn
 ;;
@@ -592,8 +597,8 @@
            ("M-)" . forward-list)
            ("C-<tab>" . other-window)
            ("<f1>" . delete-other-windows)
-           ("<f2>" . elscreen-previous)
-           ("<f3>" . elscreen-next)
+           ("<f2>" . tab-bar-switch-to-prev-tab)
+           ("<f3>" . tab-bar-switch-to-next-tab)
            ("<f4>" . split-window-vertically)
            ("<f5>" . quickrun)
            ("<f6>" . describe-personal-keybindings)
