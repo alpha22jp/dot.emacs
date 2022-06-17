@@ -6,6 +6,8 @@
 
 ;;; Code:
 
+(setq byte-compile-warnings '(cl-functions))
+
 ;; package settings
 ;;
 (when (require 'package nil 'noerror)
