@@ -6,8 +6,7 @@
  '(column-number-mode t)
  '(company-minimum-prefix-length 1)
  '(gist-list-format
-   (quote
-    ((files "Filename" 24 nil identity)
+   '((files "Filename" 24 nil identity)
      (created "Created" 16 nil "%D %R")
      (visibility "Visibility" 10 nil
                  (lambda
@@ -15,15 +14,15 @@
                    (or
                     (and public "public")
                     "private")))
-     (description "Description" 0 nil identity))))
- '(magit-display-buffer-function (quote magit-display-buffer-same-window-except-diff-v1))
+     (description "Description" 0 nil identity)))
+ '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   (quote
-    (diminish nhexl-mode gnu-elpa-keyring-update plantuml-mode mozc-popup gist wgrep-pt pt textile-mode atomic-chrome use-package swift-mode solarized-theme smartparens smart-mode-line simplenote2 rtags helm-rtags region-bindings-mode recentf-ext quickrun popup mozc mc-extras markdown-mode magit json-mode js2-mode helm-swoop helm-gtags helm-descbinds helm-cscope helm-ag google-c-style git-gutter-fringe flycheck-irony expand-region exec-path-from-shell company-irony cmake-mode haskell-mode powerline)))
- '(pt-arguments (quote ("--smart-case" "--follow")))
+   '(diminish nhexl-mode gnu-elpa-keyring-update plantuml-mode mozc-popup elscreen gist wgrep-pt pt textile-mode atomic-chrome use-package swift-mode solarized-theme smartparens smart-mode-line simplenote2 rtags helm-rtags region-bindings-mode recentf-ext quickrun popup mozc mc-extras markdown-mode magit json-mode js2-mode helm-swoop helm-gtags helm-descbinds helm-cscope helm-ag google-c-style git-gutter-fringe flycheck-irony expand-region exec-path-from-shell company-irony cmake-mode haskell-mode powerline))
+ '(plantuml-indent-level 4)
+ '(pt-arguments '("--smart-case" "--follow"))
  '(show-paren-mode t)
- '(sp-ignore-modes-list (quote (minibuffer-inactive-mode markdown-mode gfm-mode)))
+ '(sp-ignore-modes-list '(minibuffer-inactive-mode markdown-mode gfm-mode))
  '(tool-bar-mode nil)
  '(tooltip-mode nil))
 (custom-set-faces
