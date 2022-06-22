@@ -566,8 +566,14 @@
 ;; input method
 ;;
 (if (eq system-type 'windows-nt)
-    ;; WindowsではWindows上のIMEを使う
-    (require 'ime-temp-off nil 'noerror) ;; ミニバッファ中は自動的にIMEオフ
+    (use-package tr-ime
+      :config
+      (tr-ime-advanced-install)
+      (setq default-input-method "W32-IME")
+      (setq-default w32-ime-mode-line-state-indicator "[--]")
+      (setq w32-ime-mode-line-state-indicator-list '("[--]" "[あ]" "[--]"))
+      (modify-all-frames-parameters '((ime-font . "MeiryoKe_Console-12")))
+      (w32-ime-initialize))
   (use-package mozc
     :bind ("<henkan>" . toggle-input-method)
     :config
