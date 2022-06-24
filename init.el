@@ -247,18 +247,29 @@
 
 ;; tab-bar mode
 ;;
-(tab-bar-mode 1)
-(defvar ctl-o-map (make-keymap))
-(define-key global-map (kbd "C-o") ctl-o-map)
-(define-key ctl-o-map (kbd "c") 'tab-new)
-(define-key ctl-o-map (kbd "k") 'tab-close)
-(setq tab-bar-new-tab-choice (lambda () (switch-to-buffer "*scratch*")))
-(setq tab-bar-tab-hints t)
-(setq tab-bar-new-button-show nil)
-(setq tab-bar-close-button-show nil)
-(setq tab-bar-tab-name-truncated-max 20)
-(setq tab-bar-tab-name-function 'tab-bar-tab-name-truncated)
-(setq tab-bar-new-tab-to 'rightmost)
+(use-package tab-bar
+  :config
+  (defun tab-bar-tab-name-fixed-size ()
+    (let ((tab-name (buffer-name (window-buffer (minibuffer-selected-window)))))
+      (if (< (length tab-name) tab-bar-tab-name-truncated-max)
+          (concat tab-name (make-string (- tab-bar-tab-name-truncated-max (length tab-name)) ? ))
+        (propertize (truncate-string-to-width
+                     tab-name tab-bar-tab-name-truncated-max nil nil
+                     tab-bar-tab-name-ellipsis)
+                    'help-echo tab-name))))
+  (defvar ctl-o-map (make-keymap))
+  (define-key global-map (kbd "C-o") ctl-o-map)
+  (bind-keys :map ctl-o-map
+             ("c" . tab-new)
+             ("k" . tab-close))
+  (setq tab-bar-new-tab-choice (lambda () (switch-to-buffer "*scratch*")))
+  (setq tab-bar-tab-hints t)
+  (setq tab-bar-new-button-show nil)
+  (setq tab-bar-close-button-show nil)
+  (setq tab-bar-tab-name-truncated-max 12)
+  (setq tab-bar-tab-name-function 'tab-bar-tab-name-fixed-size)
+  (setq tab-bar-new-tab-to 'rightmost)
+  (tab-bar-mode 1))
 
 ;; psvn
 ;;
