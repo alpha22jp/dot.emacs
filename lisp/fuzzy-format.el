@@ -108,10 +108,10 @@
     (save-excursion
       (goto-char (point-min))
       (while (re-search-forward "^  " nil t) ;; should be two spaces at least
-        (incf space-count))
+        (cl-incf space-count))
       (goto-char (point-min))
       (while (re-search-forward "^\t" nil t)
-        (incf tab-count))
+        (cl-incf tab-count))
       (cond ((> space-count tab-count) "spaces")
             ((= space-count tab-count) "=")
             (t "tabs")))))
@@ -182,7 +182,7 @@
 
 (define-minor-mode fuzzy-format-mode
   "Fuzzy format mode"
-  nil fuzzy-format-mode-line nil
+  :init-value nil :lighter fuzzy-format-mode-line :keymap nil
   (if fuzzy-format-mode
       (progn
         (fuzzy-format-auto-format)
@@ -219,19 +219,19 @@
       (let
           ((l nil) (point nil))
         (setq str (fuzzy-format-get-current-line))
-        (loop for x in pair-list do (progn
+        (cl-loop for x in pair-list do (progn
                                       (while (string-match (car x) str point)
                                         (setq point (string-match (car x) str point))
                                         (push (list point x t (line-number-at-pos)) l)
-                                        (setq point (incf point)))
+                                        (setq point (cl-incf point)))
                                       (setq point nil)
                                       (while (string-match (cdr x) str point)
                                         (setq point (string-match (cdr x) str point))
                                         (push (list point x nil (line-number-at-pos)) l)
-                                        (setq point (incf point)))
+                                        (setq point (cl-incf point)))
                                       (setq point nil)))
         (setq l (sort l (lambda (a b) (< (car a) (car b)))))
-        (loop
+        (cl-loop
          with pair = nil
          for x in l do (if (nth 2 x)
                            (push x line-list)
@@ -241,8 +241,8 @@
                            (message "%s or %s: error: Unmatched pair of %s or %s\n" (nth 3 pair) (nth 3 x) (nth 1 pair) (nth 1 x))
                            (goto-line error-line)
                            (setq s nil)
-                           (return))))
-          (incf current-line)))
+                           (cl-return))))
+          (cl-incf current-line)))
 
     (if (and s line-list)
         (progn
