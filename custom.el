@@ -30,6 +30,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(tab-bar-tab ((t (:background "#002b36" :foreground "dark orange"))))
+ '(tab-bar-tab ((t (:background "#839496" :foreground "#002b36"))))
  '(textile-link-face ((t (:foreground "royalblue"))))
  '(textile-ul-bullet-face ((t (:foreground "royalblue")))))
