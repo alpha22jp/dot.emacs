@@ -18,7 +18,7 @@
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(diminish nhexl-mode gnu-elpa-keyring-update plantuml-mode mozc-popup elscreen gist wgrep-pt pt textile-mode atomic-chrome use-package swift-mode solarized-theme smartparens smart-mode-line simplenote2 rtags helm-rtags region-bindings-mode recentf-ext quickrun popup mozc mc-extras markdown-mode magit json-mode js2-mode helm-swoop helm-gtags helm-descbinds helm-cscope helm-ag google-c-style git-gutter-fringe flycheck-irony expand-region exec-path-from-shell company-irony cmake-mode haskell-mode powerline))
+   '(diminish nhexl-mode gnu-elpa-keyring-update plantuml-mode mozc-popup gist wgrep-pt pt textile-mode atomic-chrome use-package swift-mode solarized-theme smartparens smart-mode-line simplenote2 rtags helm-rtags region-bindings-mode recentf-ext quickrun popup mozc mc-extras markdown-mode magit json-mode js2-mode helm-swoop helm-gtags helm-descbinds helm-cscope helm-ag google-c-style git-gutter-fringe flycheck-irony expand-region exec-path-from-shell company-irony cmake-mode haskell-mode powerline))
  '(plantuml-indent-level 4)
  '(pt-arguments '("--smart-case" "--follow"))
  '(show-paren-mode t)
